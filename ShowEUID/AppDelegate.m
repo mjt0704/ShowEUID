@@ -10,9 +10,19 @@
 
 @implementation AppDelegate
 
+- (void)awakeFromNib
+{
+    [label setIntegerValue:geteuid()];
+}
+
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    // Insert code here to initialize your application
+    [NSApp activateIgnoringOtherApps:YES];
+}
+
+- (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)sender
+{
+    return YES;
 }
 
 @end
