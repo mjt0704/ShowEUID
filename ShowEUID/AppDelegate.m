@@ -12,7 +12,8 @@
 
 - (void)awakeFromNib
 {
-    [label setIntegerValue:geteuid()];
+    [labelShowEUIDAtLaunch setIntegerValue:geteuid()];
+    [labelShowEUIDAtClickButton setStringValue:@""];
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
@@ -23,6 +24,11 @@
 - (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)sender
 {
     return YES;
+}
+
+- (IBAction)getEUID:(id)sender
+{
+    [labelShowEUIDAtClickButton setIntegerValue:geteuid()];
 }
 
 @end

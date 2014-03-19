@@ -9,9 +9,12 @@
 #import <Cocoa/Cocoa.h>
 
 @interface AppDelegate : NSObject <NSApplicationDelegate> {
-    IBOutlet NSTextField *label;
+    IBOutlet NSTextField *labelShowEUIDAtLaunch;
+    IBOutlet NSTextField *labelShowEUIDAtClickButton;
 }
 
 @property (assign) IBOutlet NSWindow *window;
+
+- (IBAction)getEUID:(id)sender;
 
 @end
